@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2024 Your Name
- * SPDX-License-Identifier: Apache-2.0
- */
-
 `default_nettype none
 
 module tt_um_example (
@@ -15,13 +10,17 @@ module tt_um_example (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-	reg [23:0] counter;
-	
-	assign uo_out[7:1] = 7'b0;
+    reg [23:0] counter;
+    
+    // ភ្ជាប់ Bit ទី ២៣ ទៅកាន់ LED (ជើងទី 0)
+    assign uo_out[0] = counter[23]; 
+    
+    // បិទជើងដែលមិនប្រើឱ្យទៅជា 0
+    assign uo_out[7:1] = 7'b0;
     assign uio_out = 8'b0;
     assign uio_oe  = 8'b0;
 
-	always @(posedge clk) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             counter <= 0;
         end else begin
