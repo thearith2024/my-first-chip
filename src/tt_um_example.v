@@ -3,8 +3,12 @@ module blink_led (
     input reset,  // ប៊ូតុង Reset
     output reg led // ជើង Output ទៅ LED
 );
-    reg [2:0] counter; // បង្កើតកន្លែងរាប់លេខទំហំ 3-bit (រាប់ពី 0 ដល់ 7)
+    reg [23:0] counter; // បង្កើតកន្លែងរាប់លេខទំហំ 3-bit (រាប់ពី 0 ដល់ 7)
 
+	wire _unused = &{ui_in, uio_in, ena, 1'b0};
+	
+	assign uo_out[0] = counter[23];
+	
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             counter <= 0;

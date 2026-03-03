@@ -12,10 +12,13 @@ module tt_um_example (
 );
     reg [23:0] counter;
     
-    // ភ្ជាប់ Bit ទី ២៣ ទៅកាន់ LED (ជើងទី 0)
-    assign uo_out[0] = counter[23]; 
+    // បំបាត់ Warning-UNUSEDSIGNAL
+    wire _unused = &{ui_in, uio_in, ena, 1'b0};
+
+    // ភ្ជាប់ LED
+    assign uo_out[0] = counter[23];
     
-    // បិទជើងដែលមិនប្រើឱ្យទៅជា 0
+    // បិទជើងផ្សេងៗ
     assign uo_out[7:1] = 7'b0;
     assign uio_out = 8'b0;
     assign uio_oe  = 8'b0;
@@ -29,3 +32,4 @@ module tt_um_example (
     end
 
 endmodule
+// (ត្រូវប្រាកដថាមានបន្ទាត់ទទេនៅទីនេះ)
