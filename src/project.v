@@ -32,4 +32,3 @@ module tt_um_example (
     end
 
 endmodule
-// (ត្រូវប្រាកដថាមានបន្ទាត់ទទេនៅទីនេះ)
