@@ -1,20 +1,12 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+This project is a simple 24-bit counter that divides the main clock frequency. 
+The 23rd bit of the counter is connected to the output pin `uo_out[0]`, 
+which creates a visible blinking effect on an LED when a 10MHz clock is applied.
 
 ## How to test
 
-Explain how to use your project
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+1. Apply a clock signal to the `clk` pin.
+2. Set the `rst_n` (reset) pin to high (1).
+3. Observe the LED blinking on the output pin `uo_out[0]`.
+4. To reset the counter, pull the `rst_n` pin to low (0) momentarily.
