@@ -1,27 +1,27 @@
 # Tiny Tapeout project information
 project:
-  title:        "My First Blink LED"      # Project title
-  author:       "thearith"      # Your name
-  discord:      ""      # Your discord username (optional)
-  description:  "A simple LED blinker using a 24-bit counter"      
-  language:     "Verilog" 
-  clock_hz:     10000000       # Clock frequency in Hz
+  title:        "My First Blink LED"
+  author:       "thearith"
+  discord:      ""
+  description:  "A simple 24-bit counter LED blinker"
+  language:     "Verilog"
+  clock_hz:     10000000
 
-  # How many tiles your design occupies? 
-  tiles: "1x1"          
+  # How many tiles your design occupies
+  tiles: "1x1"
 
-  # Your top module name must match your Verilog module
+  # Top module name
   top_module:  "tt_um_example"
   
-  # List your project's source files here
-  source_files:        
+  # Source files
+  source_files:
     - "project.v"
 
-  # ផ្នែកខាងក្រោមនេះសំខាន់សម្រាប់ឱ្យ Docs បៃតង
-  how_it_works: "The project uses a 24-bit counter to divide the clock frequency and toggle an LED."
-  how_to_test:  "Apply power and clock. Observe the LED blinking on the first output pin."
+  # ផ្នែកខាងក្រោមនេះ បើបាត់ វានឹងធ្វើឱ្យ Docs ក្រហម
+  how_it_works: "This project uses a 24-bit counter to divide a 10MHz clock, making an LED blink at visible speed."
+  how_to_test:  "Apply 10MHz clock to the clk pin, and observe the LED on uo_out[0]."
 
-# The pinout of your project.
+# Pinout configuration
 pinout:
   # Inputs
   ui[0]: "reset"
